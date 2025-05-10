@@ -10,9 +10,15 @@ const useDetail = (id: number) => {
     queryFn: getMovieDetail,
   });
 
+  const formatRuntime = (minutes: number) => {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return `${hours}h ${mins}m`;
+  };
   return {
     detailMovie: detailMovie.data,
     isLoading: detailMovie.isLoading,
+    formatRuntime,
   };
 };
 

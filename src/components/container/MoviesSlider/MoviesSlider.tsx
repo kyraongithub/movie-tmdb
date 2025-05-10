@@ -18,14 +18,14 @@ const MoviesSlider = (props: SliderPropsInterface) => {
         </h2>
         <a
           href={`/category/${link}`}
-          className="text-sm text-gray-400 hover:text-white transition-colors"
+          className="text-sm text-gray-400 hover:text-gray-600 transition-colors"
         >
           View All
         </a>
       </div>
 
       <div className="relative">
-        <div className="flex overflow-x-scroll space-x-4 px-4 pb-4 scrollbar-hide">
+        <div className="flex overflow-x-scroll space-x-4 pb-4 scrollbar-hide  overflow-y-hidden">
           {movieList?.map((movie: MovieInterface) => (
             <Card
               key={movie.id}

@@ -5,8 +5,9 @@ import Button from '../../ui/Button';
 import Card from '../../ui/Card';
 import Input from '../../ui/Input';
 import useExplore from './useExplore';
+import LoaderSkeleton from '../../ui/Skeleton';
 
-const Explorepage: React.FC = () => {
+const ExplorePage: React.FC = () => {
   const {
     movieList,
     query,
@@ -15,36 +16,121 @@ const Explorepage: React.FC = () => {
     setpage,
     keyword,
     setkeyword,
+    isLoading,
   } = useExplore();
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    setquery(keyword);
+  };
+
   return (
-    <div>
-      <Input
-        type="text"
-        placeholder="Search"
-        onChange={(e) => setkeyword(e.target.value)}
-      />
-      <Button onClick={() => setquery(keyword)}>Search</Button>
-      {query === '' && <p>let's explore movies with us</p>}
-      {query &&
-        movieList?.map((movie: MovieInterface) => (
-          <Card key={movie.id} id={movie.id} movie={movie} />
-        ))}
-      {query && movieList && (
-        <ReactPaginate
-          pageCount={totalPages}
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={({ selected }) =>
-            setpage(selected === 0 ? 1 : selected)
-          }
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-          className="cursor-pointer"
-        />
-      )}
+    <div className="min-h-[100vh] bg-gray-900 text-white">
+      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-6">
+            Explore Movies
+          </h1>
+
+          <form onSubmit={handleSearch} className="flex gap-2 w-full">
+            <div className="relative flex-1">
+              <Input
+                type="text"
+                placeholder="Search for movies..."
+                value={keyword}
+                onChange={(e) => setkeyword(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <Button
+              type="submit"
+              className="cursor-pointer px-6 py-3 bg-primary hover:bg-primary-dark transition-colors"
+            >
+              Search
+            </Button>
+          </form>
+        </div>
+      </section>
+
+      <section className="py-8 px-4 sm:px-6 lg:px-8">
+        {isLoading ? (
+          <div className="flex justify-center items-center h-64">
+            <LoaderSkeleton width={200} height={300} />
+          </div>
+        ) : (
+          <>
+            {query === '' ? (
+              <div className="text-center py-20">
+                <h2 className="text-2xl font-medium mb-4">
+                  Let's Explore Movies Together
+                </h2>
+                <p className="text-gray-400 max-w-lg mx-auto">
+                  Search for your favorite movies, discover new releases, or
+                  explore trending content.
+                </p>
+              </div>
+            ) : (
+              <>
+                <h2 className="text-xl font-semibold mb-6">
+                  Search Results for:{' '}
+                  <span className="text-primary">"{query}"</span>
+                </h2>
+
+                {movieList?.length === 0 ? (
+                  <div className="text-center py-16">
+                    <h3 className="text-xl font-medium">No movies found</h3>
+                    <p className="text-gray-400 mt-2">
+                      Try different keywords or check back later
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+                      {movieList?.map((movie: MovieInterface) => (
+                        <Card
+                          key={movie.id}
+                          id={movie.id}
+                          movie={movie}
+                          className="transition-transform hover:scale-105"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                      <div className="mt-10 flex justify-center">
+                        <ReactPaginate
+                          pageCount={totalPages}
+                          breakLabel={<span className="mx-2">...</span>}
+                          nextLabel={
+                            <span className="px-3 py-1 rounded-md bg-gray-800 hover:bg-gray-700">
+                              Next &gt;
+                            </span>
+                          }
+                          onPageChange={({ selected }) => setpage(selected + 1)}
+                          previousLabel={
+                            <span className="px-3 py-1 rounded-md bg-gray-800 hover:bg-gray-700">
+                              &lt; Previous
+                            </span>
+                          }
+                          pageClassName="mx-1"
+                          pageLinkClassName="block px-3 py-1 rounded-md hover:bg-gray-800"
+                          activeClassName="bg-primary hover:bg-primary-dark"
+                          activeLinkClassName="font-bold"
+                          containerClassName="flex items-center space-x-2"
+                          disabledClassName="opacity-50 cursor-not-allowed"
+                        />
+                      </div>
+                    )}
+                  </>
+                )}
+              </>
+            )}
+          </>
+        )}
+      </section>
     </div>
   );
 };
 
-export default Explorepage;
+export default ExplorePage;
