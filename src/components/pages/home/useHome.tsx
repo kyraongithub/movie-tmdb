@@ -17,8 +17,9 @@ const useHome = () => {
   });
 
   return {
-    movieList: movieList?.data,
+    movieList: movieList.data?.data,
     isLoading: movieList.isLoading,
+    totalPages: movieList.data?.total,
     setpage,
     page,
     category,
