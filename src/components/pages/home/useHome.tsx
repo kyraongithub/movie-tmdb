@@ -5,21 +5,23 @@ import { getMovies } from './helper';
 const useHome = () => {
   const [page, setpage] = useState<number>(1);
   const [category, setcategory] = useState<string>('now_playing');
+
   const getMovieList = useCallback(
     async () => getMovies(page, category),
     [page, category]
   );
 
   const movieList = useQuery({
-    queryKey: ['movieList', page],
+    queryKey: ['movieList', page, category],
     queryFn: getMovieList,
   });
 
   return {
-    movieList: movieList.data,
+    movieList: movieList?.data,
     isLoading: movieList.isLoading,
     setpage,
     page,
+    category,
     setcategory,
   };
 };
