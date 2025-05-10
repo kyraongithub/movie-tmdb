@@ -1,22 +1,22 @@
 import React from 'react';
-import ReactPaginate from 'react-paginate';
 import type { MovieInterface } from '../../../interfaces/Movie.interface';
 import Button from '../../ui/Button';
 import Card from '../../ui/Card';
 import Input from '../../ui/Input';
-import useExplore from './useExplore';
 import LoaderSkeleton from '../../ui/Skeleton';
+import useExplore from './useExplore';
 
 const ExplorePage: React.FC = () => {
   const {
-    movieList,
     query,
-    totalPages,
-    setpage,
     keyword,
     setkeyword,
     isLoading,
     handleSearch,
+    hasNextPage,
+    isFetchingNextPage,
+    ref,
+    allMovies,
   } = useExplore();
 
   return (
@@ -71,7 +71,7 @@ const ExplorePage: React.FC = () => {
                   <span className="text-primary">"{query}"</span>
                 </h2>
 
-                {movieList?.length === 0 ? (
+                {allMovies.length === 0 ? (
                   <div className="text-center py-16">
                     <h3 className="text-xl font-medium">No movies found</h3>
                     <p className="text-gray-400 mt-2">
@@ -81,7 +81,7 @@ const ExplorePage: React.FC = () => {
                 ) : (
                   <>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-                      {movieList?.map((movie: MovieInterface) => (
+                      {allMovies.map((movie: MovieInterface) => (
                         <Card
                           key={movie.id}
                           id={movie.id}
@@ -91,32 +91,22 @@ const ExplorePage: React.FC = () => {
                       ))}
                     </div>
 
-                    {/* Pagination */}
-                    {totalPages > 1 && (
-                      <div className="mt-10 flex justify-center">
-                        <ReactPaginate
-                          pageCount={totalPages}
-                          breakLabel={<span className="mx-2">...</span>}
-                          nextLabel={
-                            <span className="px-3 py-1 rounded-md bg-gray-800 hover:bg-gray-700">
-                              Next &gt;
-                            </span>
-                          }
-                          onPageChange={({ selected }) => setpage(selected + 1)}
-                          previousLabel={
-                            <span className="px-3 py-1 rounded-md bg-gray-800 hover:bg-gray-700">
-                              &lt; Previous
-                            </span>
-                          }
-                          pageClassName="mx-1"
-                          pageLinkClassName="block px-3 py-1 rounded-md hover:bg-gray-800"
-                          activeClassName="bg-primary hover:bg-primary-dark"
-                          activeLinkClassName="font-bold"
-                          containerClassName="flex items-center space-x-2"
-                          disabledClassName="opacity-50 cursor-not-allowed"
-                        />
-                      </div>
-                    )}
+                    {/* Infinite scroll trigger */}
+                    <div
+                      ref={ref}
+                      className="h-10 flex justify-center items-center"
+                    >
+                      {isFetchingNextPage && (
+                        <div className="text-gray-400">
+                          Loading more movies...
+                        </div>
+                      )}
+                      {!hasNextPage && allMovies.length > 0 && (
+                        <div className="text-gray-400">
+                          No more movies to load
+                        </div>
+                      )}
+                    </div>
                   </>
                 )}
               </>

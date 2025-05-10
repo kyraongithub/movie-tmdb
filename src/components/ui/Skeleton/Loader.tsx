@@ -15,7 +15,9 @@ const LoaderSkeleton = (props: LoaderPropsInterface) => {
         height: `${height}px`,
         borderRadius: `${radius}px`,
       }}
-    />
+    >
+      loading......
+    </div>
   );
 };
 
