@@ -14,4 +14,12 @@ export const routes: Route[] = [
     path: '/detail/:id',
     component: lazy(() => import('../components/pages/detail')),
   },
+  {
+    path: '/explore',
+    component: lazy(() => import('../components/pages/explore')),
+  },
+  {
+    path: '/category/:category',
+    component: lazy(() => import('../components/pages/category')),
+  },
 ];

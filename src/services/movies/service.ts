@@ -17,7 +17,7 @@ const searchMovies = async (page: number = 1, query: string) => {
 const fetchMovieDetail = async (id: string) => {
   const response = await api.get(movieEndpoint.getDetailMovie(id));
   const { data } = response;
-  return data.results;
+  return data;
 };
 
 const services = {

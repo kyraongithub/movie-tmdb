@@ -1,41 +1,41 @@
 import type React from 'react';
+import MoviesSlider from '../../container/MoviesSlider/MoviesSlider';
 import useHome from './useHome';
-import Select from '../../ui/Select/Select';
-import { CATEGORY_SELECT } from './constants';
-import Input from '../../ui/Input';
-import Button from '../../ui/Button';
-import Card from '../../ui/Card';
-import type { MovieInterface } from '../../../interfaces/Movie.interface';
-import ReactPaginate from 'react-paginate';
 
 const Homepage: React.FC = () => {
-  const { movieList, category, setcategory, totalPages, setpage } = useHome();
+  const {
+    movieListPlaying,
+    isLoadingPlaying,
+    movieListPopular,
+    isLoadingPopular,
+    movieListTopRated,
+    isLoadingTopRated,
+    movieListUpcoming,
+    isLoadingUpcoming,
+  } = useHome();
 
   return (
     <div>
-      <Select
-        options={CATEGORY_SELECT}
-        value={category}
-        onChange={setcategory}
+      <MoviesSlider
+        isLoading={isLoadingPlaying}
+        movieList={movieListPlaying}
+        link="now_playing"
       />
-
-      <Input type="text" placeholder="Search" />
-      <Button>Search</Button>
-
-      {movieList?.map((movie: MovieInterface) => (
-        <Card key={movie.id} title={movie.title} />
-      ))}
-      {movieList && (
-        <ReactPaginate
-          pageCount={totalPages}
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={({ selected }) => setpage(selected + 1)}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-          className="cursor-pointer"
-        />
-      )}
+      <MoviesSlider
+        isLoading={isLoadingPopular}
+        movieList={movieListPopular}
+        link="popular"
+      />
+      <MoviesSlider
+        isLoading={isLoadingTopRated}
+        movieList={movieListTopRated}
+        link="top_rated"
+      />
+      <MoviesSlider
+        isLoading={isLoadingUpcoming}
+        movieList={movieListUpcoming}
+        link="upcoming"
+      />
     </div>
   );
 };

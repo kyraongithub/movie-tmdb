@@ -1,29 +1,29 @@
 import { useQuery } from '@tanstack/react-query';
-import { useCallback, useState } from 'react';
 import { getMovies } from './helper';
+import type { MovieInterface } from '../../../interfaces/Movie.interface';
+
+const useMovieQuery = (category: string) => {
+  return useQuery<{ data: MovieInterface[] }>({
+    queryKey: ['movie', category],
+    queryFn: () => getMovies(1, category),
+  });
+};
 
 const useHome = () => {
-  const [page, setpage] = useState<number>(1);
-  const [category, setcategory] = useState<string>('now_playing');
-
-  const getMovieList = useCallback(
-    async () => getMovies(page, category),
-    [page, category]
-  );
-
-  const movieList = useQuery({
-    queryKey: ['movieList', page, category],
-    queryFn: getMovieList,
-  });
+  const nowPlaying = useMovieQuery('now_playing');
+  const popular = useMovieQuery('popular');
+  const topRated = useMovieQuery('top_rated');
+  const upcoming = useMovieQuery('upcoming');
 
   return {
-    movieList: movieList.data?.data,
-    isLoading: movieList.isLoading,
-    totalPages: movieList.data?.total,
-    setpage,
-    page,
-    category,
-    setcategory,
+    movieListPlaying: nowPlaying.data?.data ?? [],
+    isLoadingPlaying: nowPlaying.isLoading,
+    movieListPopular: popular.data?.data ?? [],
+    isLoadingPopular: popular.isLoading,
+    movieListTopRated: topRated.data?.data ?? [],
+    isLoadingTopRated: topRated.isLoading,
+    movieListUpcoming: upcoming.data?.data ?? [],
+    isLoadingUpcoming: upcoming.isLoading,
   };
 };
 
