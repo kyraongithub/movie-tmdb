@@ -28,6 +28,11 @@ const useExplore = () => {
     queryFn: getMovielist,
   });
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    setquery(keyword);
+  };
+
   return {
     movieList: movieList.data?.data,
     isLoading: movieList.isLoading,
@@ -38,6 +43,7 @@ const useExplore = () => {
     setquery,
     keyword,
     setkeyword,
+    handleSearch,
   };
 };
 

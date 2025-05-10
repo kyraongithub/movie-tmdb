@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Detail > renders Detail component 1`] = `
+<div>
+  <div
+    class="flex justify-center items-center min-h-screen bg-gray-900"
+  >
+    <div
+      class="_skeleton_8f912d"
+      style="width: 200px; height: 300px; border-radius: 0px;"
+    />
+  </div>
+</div>
+`;

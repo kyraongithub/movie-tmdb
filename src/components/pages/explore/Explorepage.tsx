@@ -11,18 +11,13 @@ const ExplorePage: React.FC = () => {
   const {
     movieList,
     query,
-    setquery,
     totalPages,
     setpage,
     keyword,
     setkeyword,
     isLoading,
+    handleSearch,
   } = useExplore();
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    setquery(keyword);
-  };
 
   return (
     <div className="min-h-[100vh] bg-gray-900 text-white">

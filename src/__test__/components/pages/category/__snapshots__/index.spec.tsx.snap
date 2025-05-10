@@ -1,0 +1,40 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Category > renders Category component 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-gray-900 text-white"
+  >
+    <header
+      class="py-6 px-4 sm:px-6 lg:px-8 border-b border-gray-800"
+    >
+      <h1
+        class="text-3xl font-bold"
+      >
+        Now Playing
+         Movies
+      </h1>
+      <p
+        class="text-gray-400 mt-2"
+      >
+        Browse our collection of 
+        now playing
+         
+        movies
+      </p>
+    </header>
+    <main
+      class="py-8 px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="flex justify-center items-center h-64"
+      >
+        <div
+          class="_skeleton_8f912d"
+          style="width: 200px; height: 300px; border-radius: 0px;"
+        />
+      </div>
+    </main>
+  </div>
+</div>
+`;

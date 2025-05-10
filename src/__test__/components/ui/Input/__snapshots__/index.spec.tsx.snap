@@ -7,3 +7,11 @@ exports[`Input > render Input component 1`] = `
   />
 </div>
 `;
+
+exports[`Input > renders Input component 1`] = `
+<div>
+  <input
+    type="text"
+  />
+</div>
+`;

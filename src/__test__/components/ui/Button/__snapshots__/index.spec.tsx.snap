@@ -7,3 +7,11 @@ exports[`Button > render button component 1`] = `
   </button>
 </div>
 `;
+
+exports[`Button > renders Button component 1`] = `
+<div>
+  <button>
+    Button
+  </button>
+</div>
+`;

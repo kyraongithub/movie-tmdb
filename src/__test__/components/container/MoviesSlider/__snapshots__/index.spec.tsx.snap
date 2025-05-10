@@ -11,11 +11,13 @@ exports[`MoviesSlider > render MoviesSlider component 1`] = `
       <h2
         class="text-xl font-bold  hover:text-primary transition-colors"
       >
-        <h1 />
+        <h1>
+          Now Playing
+        </h1>
       </h2>
       <a
         class="text-sm text-gray-400 hover:text-gray-600 transition-colors"
-        href="/category/"
+        href="/category/now_playing"
       >
         View All
       </a>
@@ -25,7 +27,388 @@ exports[`MoviesSlider > render MoviesSlider component 1`] = `
     >
       <div
         class="flex overflow-x-scroll space-x-4 pb-4 scrollbar-hide  overflow-y-hidden"
-      />
+      >
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Exterritorial"
+            src="https://image.tmdb.org/t/p/w500//jM2uqCZNKbiyStyzXOERpMqAbdx.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Exterritorial
+            </p>
+            <p>
+              ⭐
+              6.7
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Warfare"
+            src="https://image.tmdb.org/t/p/w500//j8tqBXwH2PxBPzbtO19BTF9Ukbf.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Warfare
+            </p>
+            <p>
+              ⭐
+              7.2
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Thunderbolts*"
+            src="https://image.tmdb.org/t/p/w500//m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Thunderbolts*
+            </p>
+            <p>
+              ⭐
+              7.5
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="A Working Man"
+            src="https://image.tmdb.org/t/p/w500//6FRFIogh3zFnVWn7Z6zcYnIbRcX.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              A Working Man
+            </p>
+            <p>
+              ⭐
+              6.5
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Last Bullet"
+            src="https://image.tmdb.org/t/p/w500//qycPITRqXgPai7zj1gKffjCdSB5.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Last Bullet
+            </p>
+            <p>
+              ⭐
+              7.3
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Rust"
+            src="https://image.tmdb.org/t/p/w500//tbJ3RkA2s6X5qrBzrYHYTxvDBui.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Rust
+            </p>
+            <p>
+              ⭐
+              6.3
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="A Minecraft Movie"
+            src="https://image.tmdb.org/t/p/w500//iPPTGh2OXuIv6d7cwuoPkw8govp.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              A Minecraft Movie
+            </p>
+            <p>
+              ⭐
+              6.2
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Havoc"
+            src="https://image.tmdb.org/t/p/w500//r46leE6PSzLR3pnVzaxx5Q30yUF.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Havoc
+            </p>
+            <p>
+              ⭐
+              6.6
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Death of a Unicorn"
+            src="https://image.tmdb.org/t/p/w500//lXR32JepFwD1UHkplWqtBP1K79z.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Death of a Unicorn
+            </p>
+            <p>
+              ⭐
+              6.5
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="In the Lost Lands"
+            src="https://image.tmdb.org/t/p/w500//dDlfjR7gllmr8HTeN6rfrYhTdwX.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              In the Lost Lands
+            </p>
+            <p>
+              ⭐
+              6.3
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Jewel Thief: The Heist Begins"
+            src="https://image.tmdb.org/t/p/w500//eujLbO0kf1eqWC8XpHUJdtAVW2J.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Jewel Thief: The Heist Begins
+            </p>
+            <p>
+              ⭐
+              6.6
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Saint Catherine"
+            src="https://image.tmdb.org/t/p/w500//hBJdzKPeDaC96AzlrtMWBomYSZV.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Saint Catherine
+            </p>
+            <p>
+              ⭐
+              6.2
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Sinners"
+            src="https://image.tmdb.org/t/p/w500//jYfMTSiFFK7ffbY2lay4zyvTkEk.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Sinners
+            </p>
+            <p>
+              ⭐
+              7.6
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Conclave"
+            src="https://image.tmdb.org/t/p/w500//l4WXg5oQPK6GVlISKQNIUGb8rKJ.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Conclave
+            </p>
+            <p>
+              ⭐
+              7.2
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="The Monkey"
+            src="https://image.tmdb.org/t/p/w500//yYa8Onk9ow7ukcnfp2QWVvjWYel.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              The Monkey
+            </p>
+            <p>
+              ⭐
+              5.9
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Bullet Train Explosion"
+            src="https://image.tmdb.org/t/p/w500//jmzxlDBwgvRbpPJzNQwizyn9UEn.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Bullet Train Explosion
+            </p>
+            <p>
+              ⭐
+              6.9
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="The Biggest Fan"
+            src="https://image.tmdb.org/t/p/w500//wgUmsekYPOt9ZQ8ero91qRnmhQY.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              The Biggest Fan
+            </p>
+            <p>
+              ⭐
+              5.2
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Novocaine"
+            src="https://image.tmdb.org/t/p/w500//xmMHGz9dVRaMY6rRAlEX4W0Wdhm.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Novocaine
+            </p>
+            <p>
+              ⭐
+              6.9
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="Drop"
+            src="https://image.tmdb.org/t/p/w500//dS2S5lpfgRIRQOb7LDCjNsQqKjp.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              Drop
+            </p>
+            <p>
+              ⭐
+              6.6
+            </p>
+          </div>
+        </div>
+        <div
+          class="cursor-pointer hover:scale-110 transition-all min-w-[200px]"
+        >
+          <img
+            alt="G20"
+            src="https://image.tmdb.org/t/p/w500//wv6oWAleCJZUk5htrGg413t3GCy.jpg"
+          />
+          <div
+            class="flex justify-between"
+          >
+            <p>
+              G20
+            </p>
+            <p>
+              ⭐
+              6.6
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
