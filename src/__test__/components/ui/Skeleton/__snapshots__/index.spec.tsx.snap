@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Skeleton > render Skeleton component 1`] = `
+<div>
+  <div
+    class="_skeleton_8f912d"
+    style="width: 200px; height: 300px; border-radius: 0px;"
+  />
+</div>
+`;

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card > render Card component 1`] = `
+<div>
+  <div
+    class="cursor-pointer hover:scale-110 transition-all "
+  >
+    <img
+      alt="Death of a Unicorn"
+      src="https://image.tmdb.org/t/p/w500//lXR32JepFwD1UHkplWqtBP1K79z.jpg"
+    />
+    <div
+      class="flex justify-between"
+    >
+      <p>
+        Death of a Unicorn
+      </p>
+      <p>
+        ⭐
+        6.4
+      </p>
+    </div>
+  </div>
+</div>
+`;
