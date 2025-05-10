@@ -15,14 +15,16 @@ const Categorypage: React.FC = () => {
   return (
     <div>
       {movieList?.map((movie: MovieInterface) => (
-        <Card key={movie.id} id={movie.id} title={movie.title} />
+        <Card key={movie.id} id={movie.id} movie={movie} />
       ))}
       {movieList && (
         <ReactPaginate
           pageCount={totalPages}
           breakLabel="..."
           nextLabel="next >"
-          onPageChange={({ selected }) => setpage(selected + 1)}
+          onPageChange={({ selected }) =>
+            setpage(selected === 0 ? 1 : selected)
+          }
           previousLabel="< previous"
           renderOnZeroPageCount={null}
           className="cursor-pointer"

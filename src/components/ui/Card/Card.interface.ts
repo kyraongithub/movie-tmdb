@@ -1,4 +1,7 @@
+import type { MovieInterface } from '../../../interfaces/Movie.interface';
+
 export interface CardPropsInterface {
-  title: string;
+  movie: MovieInterface;
   id: number;
+  className?: string;
 }

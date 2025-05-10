@@ -1,13 +1,14 @@
 import type { CardPropsInterface } from './Card.interface';
 
 const Card = (props: CardPropsInterface) => {
-  const { title, id } = props;
+  const { movie, id, className = '' } = props;
+
   return (
     <div
-      className="cursor-pointer"
+      className={`cursor-pointer ${className}`}
       onClick={() => window.location.assign(`/detail/${id}`)}
     >
-      {title}
+      {movie?.title}
     </div>
   );
 };
